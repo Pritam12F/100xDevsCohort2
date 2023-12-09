@@ -9,12 +9,10 @@ setInterval(()=>{
         zone='AM';
     else
         zone='PM';
-    if(hours==12){
+    if(hours==12)
         actualHours=12;
-    }
-    else{
+    else
         actualHours=hours%12;
-    }
     console.log(`${hours}:${minutes}:${seconds}`);
     console.log(`${actualHours}:${minutes}:${seconds} `+zone);
 }, 1000);
