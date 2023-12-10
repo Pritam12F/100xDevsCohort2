@@ -26,7 +26,7 @@ function waitThreeSecond() {
 function calculateTime() {
     let start=Date.now();
     let end;
-    Promise.all([waitOneSecond(),waitTwoSecond(),waitThreeSecond()]).then((val)=>{
+    Promise.all([waitOneSecond(),waitTwoSecond(),waitThreeSecond()]).then((val)=>{ //Promise.all takes an array of promises and resolves itself when all of the promise objects are resolved
         end=Date.now();
         console.log(end-start);
     })

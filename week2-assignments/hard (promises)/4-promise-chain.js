@@ -23,16 +23,34 @@ function waitThreeSecond() {
     });
 }
 
+//Resolving Promises one after another
 function calculateTime() {
     let start=Date.now();
     waitOneSecond().then((res1)=>{
-        return waitTwoSecond(res1);
+        return waitTwoSecond();
     })
     .then((res2)=>{
-        return waitThreeSecond(res2);
+        return waitThreeSecond();
     })
     .then((res3)=>{
+        console.log("Calling sequentially takes time: ");
         console.log(Date.now()-start);
-        return res3;
     })
 }
+
+//Resolving Promises all at once
+function promiseAll(){
+    let start=Date.now();
+    let end;
+    Promise.all([waitOneSecond(),waitTwoSecond(),waitThreeSecond()]).then((val)=>{
+        end=Date.now();
+        console.log("Calling with Promise.all");
+        console.log(end-start);
+    })
+    .catch((err)=>{
+        console.error(err);
+    })
+}
+calculateTime();
+
+promiseAll();
