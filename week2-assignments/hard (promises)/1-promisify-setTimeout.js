@@ -3,13 +3,9 @@
 */
 
 function wait(n) {
-  const start = Date.now();
-  let p = new Promise(function (res) {
-    const end = Date.now();
-    const difference = end - start;
-    res(difference);
+  return new Promise((resolve) => {
+    setTimeout(resolve, n * 1000);
   });
-  return p;
 }
 
 module.exports = wait;
