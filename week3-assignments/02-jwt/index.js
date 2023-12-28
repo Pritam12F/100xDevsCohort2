@@ -18,7 +18,7 @@ function signJwt(username, password) {
 
 function verifyJwt(token) {
   try {
-    const v = jwt.verify(token, jwtPassword);
+    jwt.verify(token, jwtPassword);
     return true;
   } catch (e) {
     return false;
@@ -26,7 +26,7 @@ function verifyJwt(token) {
 }
 
 function decodeJwt(token) {
-  if (jwt.decode(token, jwtPassword)) {
+  if (jwt.decode(token)) {
     return true;
   } else {
     return false;
