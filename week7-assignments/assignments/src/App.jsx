@@ -7,6 +7,7 @@ import { BackgroundChanger } from "./components/Assignment2";
 import { ParagraphGen } from "./components/Assignment4";
 import GithubCard from "./components/Assignment5";
 import { Otpgenerator } from "./components/Assignment6";
+import { Birthdaywisher } from "./components/Assignment7";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       {/* <ParagraphGen></ParagraphGen> */}
       {/* <GithubCard></GithubCard> */}
       {/* <Otpgenerator></Otpgenerator> */}
+      {/* <Birthdaywisher></Birthdaywisher> */}
     </>
   );
 }
